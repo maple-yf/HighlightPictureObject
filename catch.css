@@ -1,0 +1,83 @@
+body 
+{
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+}
+
+
+#header
+{
+	width:150px;
+	margin:0px auto;
+	
+}
+#header label
+{
+	font-size:45px;
+	font-weight:bolder;
+}
+
+
+
+#content
+{
+	width:90%;
+	height:600px;
+	margin:10px auto;
+	border:1px solid blue;
+}
+
+
+
+.new_rect
+{
+	opacity: 0.7;
+    -moz-opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: alpha(opacity=70); 
+	
+	background:#A8CAEC;
+	border:1px solid #3399FF;
+	position:fixed;
+	float:left;
+}
+
+.new_rect:hover{
+	cursor:move;
+}
+
+.mousedown{
+	-webkit-box-shadow:0px 0px 8px 5px #3399FF;
+	-moz-box-shadow:0px 0px 8px 5px #3399FF;
+	box-shadow:0px 0px 8px 5px #3399FF;
+	z-index:999;
+}
+.divExtend{	
+	position:relative;
+	left:52px;
+	width:50px;
+	height:78px;
+	border:1px solid black;
+	float:right;	
+}
+.divExtend ul{
+	width:50px;
+	position:relative;
+	left:-10px;
+	top:-15px;
+}
+.divExtend li{
+	width:50px;
+	text-align:center;
+	position:relative;
+	left:-30px;
+	font-size:13px;
+	list-style:none;
+	float:right;
+	
+}
+.divExtend li:hover{
+	color:white;
+	background:black;
+	cursor:pointer;
+}
