@@ -3,7 +3,8 @@ $(function(){
 	var _img=$("#img");
 	var imgWidth=_img.width();
 	var hwratio=_img.height()/_img.width();
-	var scaleFactor=1;
+	var scaleFactor=1;//图片随着滚轮的放大参数
+	var scaleRatio=1;//图片相对于初始情况的缩放比
 	
 	$("html").click(function(){
 		console.log(event.pageX-0.05*$("html").width());
@@ -35,6 +36,9 @@ $(function(){
 
 	    	$("#imagex").html(_img.css("left"));
 	    	$("#imagey").html(_img.css("top"));
+
+	    	scaleRatio=newWidth/oldWidth;
+	    	// console.log(scaleRatio);
 	    }
 	});
 	
