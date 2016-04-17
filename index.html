@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Hightlight Picture Object</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />    
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
 		<script src="jquery-1.12.3.min.js" type="text/javascript"></script>
 		<!-- <script src="jquery.ui.core.js" type="text/javascript"></script>
 		<script src="jquery.ui.widget.js" type="text/javascript"></script>
 		<script src="jquery.ui.mouse.js" type="text/javascript"></script>
 		<script src="jquery.ui.draggable.js" type="text/javascript"></script> -->
 		<script src="jquery.mousewheel.min.js" type="text/javascript"></script>
-		<script src="jquery-ui.min.js" type="text/javascript";charset="gb2312"></script>
-		<!-- <link href="catch.css" rel="stylesheet" type="text/css";charset=gb2312/> -->
-		<script src="index.js" type="text/javascript";charset="gb2312"></script>
+		<script src="jquery-ui.min.js" type="text/javascript"></script>
+		<script src="jquery.poshytip.min.js" type="text/javascript"></script>
+		<link href="tip-yellowsimple/tip-yellowsimple.css" rel="stylesheet" type="text/css"/>
+		<script src="index.js" type="text/javascript"></script>
 		
 		<!--[if gte IE 7]>
 			<style type="text/css">
@@ -23,11 +24,20 @@
 			.panel{margin-left:5%;}
 			.panel_line{margin-top: 2px;}
 			.panel_line span{margin-right:20px;}
+			a{
+				color: red;
+				text-decoration: none;
+			}
+
 		</style>
 	</head>
 	<body>
-		<div id="window" style="width:90%;height:80%;position:relative;margin: 2% auto;overflow: hidden;">
-			<img src="4000.jpg" id="img" style="width: 100%;top:0px;left:0;position:absolute;"/>			
+		<div id="window" style="width:90%;height:80%;position:relative;margin: 2% auto;overflow: hidden;z-index:99">
+			<!-- <img src="4000.jpg" id="img" style="width: 150%;top:-25%;left:-25%;position:absolute;"/>	 -->
+			<div id="img" style="background: url('4000.jpg');background-size: 2000px;background-repeat: no-repeat;width: 2000px;height:1000px;position: absolute;top:0px;left:0px">
+				<!-- <a href="#" title="固定挡车柱" id="fixedColumn1" style="position:absolute;z-index:9;top:311.24px;left:469px">*</a> -->
+			</div>
+			
 		</div>
 
 		<div class="panel">
