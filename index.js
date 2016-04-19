@@ -40,15 +40,32 @@ $(function(){
 	    	scaleRatio=newWidth/oldWidth;
 	    	
 	    	if($(".theObject").length>0){
-	    		var objectXvalue=$(".theObject").css("left").replace("px","")*1;
-		    	var objectYvalue=$(".theObject").css("top").replace("px","")*1;
+	    		var _theObject=$($(".theObject")[0]);
+	    		var objectXvalue=_theObject.css("left").replace("px","")*1;
+		    	var objectYvalue=_theObject.css("top").replace("px","")*1;
 
-		    	var objectXRatio=objectXvalue/oldWidth;
-		    	var objectYRatio=objectYvalue/oldHeight;
+		    	var objectXRatio=mouseXimg/objectXvalue;
+		    	var objectYRatio=mouseYimg/objectYvalue;
 
+	    		console.log(_theObject.css("left"),_theObject.css("top"),event.deltaY);
+		    	
+		    	var scaleDirector=1;
+		    	//if(event.deltaY<0)scaleDirector=-1;
 
-		    	$(".theObject").css("left",objectXvalue+objectXRatio*widthChange);
-		    	$(".theObject").css("top",objectYvalue+objectYRatio*heightChange);
+		    	var theRatio=_img.width()/originalWidth;
+		    	_theObject.css("left",objectXvalue+event.deltaY*(objectXvalue*0.167/theRatio));
+		    	_theObject.css("top",objectYvalue+event.deltaY*(objectYvalue*0.169/theRatio));
+
+		    	// $(".theObject").css("left",mouseXimg-scaleRatio*(objectXvalue-mouseXimg));
+		    	// $(".theObject").css("top",mouseYimg-scaleRatio*(objectYvalue-mouseYimg));
+
+		    	// $(".theObject").css("left",objectXvalue-objectXRatio*widthChange);
+		    	// $(".theObject").css("top",objectYvalue-objectYRatio*heightChange);
+
+		    	// $(".theObject").css("left",objectXvalue+objectXRatio*widthChange);
+		    	// $(".theObject").css("top",objectYvalue+objectYRatio*heightChange);
+
+		    	
 	    	}   	
 
 
@@ -74,7 +91,7 @@ $(function(){
 		var theRatio=_img.width()/originalWidth;
 		//console.log(mouseXimg/theRatio,mouseYimg/theRatio);
 
-		if(mouseXimg/theRatio>=896&&mouseXimg/theRatio<=900&&mouseYimg/theRatio>=490&&mouseYimg/theRatio<=494){
+		if(mouseXimg/theRatio>=896&&mouseXimg/theRatio<=902&&mouseYimg/theRatio>=488&&mouseYimg/theRatio<=494){
 			$("#fixedColumn1").remove();
 			$(".tip-yellowsimple").remove();
 			AddPoint("fixedColumn1",898*theRatio,488*theRatio);
@@ -88,6 +105,8 @@ $(function(){
 		if($(".theObject").length>1){
 			$($(".theObject")[0]).remove();
 		}
+
+
 
 
 
@@ -113,7 +132,8 @@ $(function(){
 		var mouseXimg=mousex-imgXvalue;
 		var mouseYimg=mousey-imgYvalue;
 
-		console.log(mouseXimg,mouseYimg);
+		var theRatio=_img.width()/originalWidth;
+		console.log(mouseXimg,mouseYimg,mouseXimg/theRatio , mouseYimg/theRatio);
 	});
 	
 });
